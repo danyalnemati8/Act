@@ -23,6 +23,13 @@ class HealthManager: ObservableObject {
     //and allow reuse of different views
     @Published var activities: [String : Activity] =  [:]
     
+    //trying to build a mock for preview in HomeView
+    @Published var mockActivities: [String : Activity] =  [
+        "todaySteps" : Activity(id: 0, title: "Todays steps ", subtitle: "Goal: 10,000 ", image: "figure.walk.motion", amount: "15,317"),
+        "todayCalories" : Activity(id: 1, title: "Todays Calories ", subtitle: "Goal: 900 ", image: "flame", amount: "1,852")
+    ]
+    
+    
     init() {
         //calls step count feature of HK
         let steps = HKQuantityType(.stepCount)
